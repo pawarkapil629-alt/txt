@@ -1,8 +1,12 @@
-build:
-  docker:
-    worker: Dockerfile
-run:
-  worker: python3 modules/main.py
+# local
+python app.py
+
+# heroku (agar use karte ho)
+heroku logs --tail --app <your-app-name> > heroku_logs.txt
+# then open heroku_logs.txt and copy the traceback lines
+
+# docker-compose
+docker-compose logs -f > docker_logs.txt
 
   # for heroku deployment...add this bulidpack.  
 #  https://github.com/heroku/heroku-buildpack-activestorage-preview
